@@ -29,4 +29,33 @@
         ```
 
 - 链表
+     - 数据对象集
 
+        ```
+        typedef struct LNode{
+            //数据域
+            ElemType data;
+            //指针域
+            Node *next
+        }LNode,*bitLNode;
+        ```
+     - 操作集
+        ```
+        //初始化 L 
+        bitLNode InitNode();
+        //!!!!!坑坑坑，在初始化链表的时候，要LNode *&L双重引用
+        //添加(在末尾添加)
+        void AddLNode();
+        //插入(在一个数后面差插入)
+        void Insert();
+        //删除
+        void DeleteLNode();
+        //查找
+        void FindLNode();
+        //判断是否为空(如果list是空的则返回true)
+        bool isEepty();
+        //长度
+        void Length();
+        //打印链表
+        void print();
+        ```
