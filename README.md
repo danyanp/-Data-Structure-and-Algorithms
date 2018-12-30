@@ -4,13 +4,13 @@
 ## 线性表
 - ### 顺序表
     - 数据对象集
-    
         ```
         typedef struct Node{
             ElemType data[MAXSIZE];
             int last;
         }Node,*bitNode;
         ```
+        ![Image text](https://raw.githubusercontent.com/danyanp/Data-Structure-and-Algorithms/master/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E9%A1%BA%E5%BA%8F%E8%A1%A8.png)
      - 操作集
         ```
         //初始化 L 
