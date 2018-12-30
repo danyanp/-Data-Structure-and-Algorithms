@@ -64,3 +64,29 @@
         //打印链表
         void print();
         ```
+## 栈
+> 先进后出
+- ### 顺序栈
+    - 数据对象集
+        ```
+        typedef int Position;
+        typedef struct SNode
+        {
+            ElementType *Data; /* 存储元素的数组 */
+            Position Top;	  /* 栈顶指针 */
+            int MaxSize;	   /* 堆栈最大容量 */
+        } SNode, *Stack;
+        ```
+    - 数据对象集
+        ```
+        //创建一个空栈
+        Stack CreateStack(int MaxSize);
+        //判读栈是否以满
+        bool IsFull(Stack S);
+        //将元素压入栈
+        bool Push(Stack S, ElementType X);
+        //判断栈是否为空
+        bool IsEmpty(Stack S);
+        //删除并返回栈顶元素
+        ElementType Pop(Stack S);
+        ```
