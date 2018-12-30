@@ -2,8 +2,9 @@
 ## 数据结构与算法
 
 ## 线性表
-- 顺序表
+- ### 顺序表
     - 数据对象集
+    
         ```
         typedef struct Node{
             ElemType data[MAXSIZE];
@@ -27,8 +28,9 @@
         //打印L
         void print(bitNode L); 
         ```
+        
 
-- 链表
+- ### 链表
      - 数据对象集
 
         ```

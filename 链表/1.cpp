@@ -2,44 +2,56 @@
  #include<stdlib.h>
  #define ElemType int
  typedef struct LNode{
-    //Êı¾İÓò
+    //æ•°æ®åŸŸ
     ElemType data;
-    //Ö¸ÕëÓò
+    //æŒ‡é’ˆåŸŸ
     struct LNode *next;
  }LNode,*bitLNode;
  void InitLNode(bitLNode &L);
  void AddLNode(bitLNode &L,ElemType a);
+ void Insert(bitLNode L,ElemType pos);
  bool isEnpty(bitLNode L);
  void print(bitLNode L);
  int main(){
  	bitLNode L;
 	InitLNode(L);
 	AddLNode(L,2);
-	//print(L); 
+	AddLNode(L,2);
+	AddLNode(L,2);
+	AddLNode(L,2);
+	AddLNode(L,2);	
+	print(L); 
  	return 0;
  } 
  void InitLNode(bitLNode &L){
  	L = (bitLNode)malloc(sizeof(LNode));
  	L->next = NULL;
  	if(L==NULL){
- 		printf("³õÊ¼»¯Ê§°Ü£¡£¡£¡");
+ 		printf("åˆå§‹åŒ–å¤±è´¥ï¼ï¼ï¼");
  	}
  }
  void AddLNode(bitLNode &L,ElemType a){
  	bitLNode s;
-    //´´½¨½Úµã£¬È»ºó²åÈëµ½Í·½áµãÖ®ºó
-    //sÖ¸ÏòĞÂÉêÇëµÄ½Úµã
+    //åˆ›å»ºèŠ‚ç‚¹ï¼Œç„¶åæ’å…¥åˆ°å¤´ç»“ç‚¹ä¹‹å
+    //sæŒ‡å‘æ–°ç”³è¯·çš„èŠ‚ç‚¹
     s = (LNode*)malloc(sizeof(LNode));
-    //Êı¾İÓòs->data = c1 ¸³Öµ
+    //æ•°æ®åŸŸs->data = c1 èµ‹å€¼
     s->data = a;
-    //³õÊ¼»¯
+    //åˆå§‹åŒ–
     s->next = NULL;
     s->next = L->next;
     L->next = s;
-
-	printf("Ìí¼Ó³É¹¦");
  } 
- //Îª¿Õ·µ»Øtrue 
+ void Insert(bitLNode L,ElemType pos){
+ 	if(pos<0){
+ 		printf("ä½ç½®ä¸åˆæ³•ï¼ï¼ï¼");
+ 	} 
+ 	while(){
+ 		
+ 	}
+		
+ }
+ //ä¸ºç©ºè¿”å›true 
  bool isEnpty(bitLNode L){
  	if(L->next!=NULL){
  		return false;
@@ -48,13 +60,15 @@
  }
  
  void print(bitLNode L){
- 	LNode *p;
+ 	bitLNode s;
 	if(isEnpty(L)==false){
- 		printf("¸ÃÁ´±íµÄÊı¾İÎª£º");
- 		while(L->next!=NULL){
- 			printf("%d ",L->data);	
+		s = L->next; 
+ 		printf("è¯¥é“¾è¡¨çš„æ•°æ®ä¸ºï¼š");
+ 		while(s!=NULL){
+ 			printf("%d ",s->data);
+			s = s->next;
  		} 
  	}else{
- 		printf("¸ÃÁ´±íÎª¿Õ£¡£¡£¡");
+ 		printf("è¯¥é“¾è¡¨ä¸ºç©ºï¼ï¼ï¼");
  	}
  }
