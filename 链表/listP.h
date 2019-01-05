@@ -14,13 +14,20 @@
 typedef int listItemType;
 struct listNode;
 typedef listNode* ptrType;
+//数据对象集
+struct listNode{
+    //数据域
+    listItemType Item;
+    //指针域
+    ptrType Next;
+};
 class listClass{
     private:
         //list长度
         int Size;
         //Head
         ptrType Head;
-        
+        //返回指针域 
         ptrType PtrTo(int Position) const;
  
     public:
@@ -34,12 +41,11 @@ class listClass{
         bool ListIsEmpty() const;
         //list的长度
         int ListLenght() const;
-
         //插入
         void ListInsert(int NewPosition,listItemType NewItem,bool& Success);
         //删除
         void ListDelete(int Position,bool &Success);
-        
+        //查询 
         void ListRetrieve(int Position,listItemType &DataItem,bool& Success) const;
 };
 
@@ -49,15 +55,9 @@ class listClass{
  * 链表实现类
  * 2019.1.4
  */
-//数据对象集
-struct listNode{
-    //数据域
-    listItemType Item;
-    //指针域
-    ptrType Next;
-};
-//初始化
+//初始化 构造函数 
 listClass::listClass():Size(0),Head(NULL){}
+//listclass::listClass(){Size(0);Head(NULL);}
 listClass::listClass(const listClass& L):Size(L.Size){
     if(L.Head==NULL){
         Head=NULL;
@@ -70,7 +70,7 @@ listClass::listClass(const listClass& L):Size(L.Size){
             Newptr -> Next =new listNode;
             assert(Newptr->Next!=NULL);
             Newptr=Newptr->Next;
-            Newptr->Item - OrigPtr->Item;
+            Newptr->Item = OrigPtr->Item;
         }
         Newptr -> Next = NULL;
     }
@@ -89,7 +89,6 @@ bool listClass::ListIsEmpty() const{
 int listClass::ListLenght()const{
     return Size;
 }
-//返回指针域 
 ptrType listClass::PtrTo(int Position) const {
     if((Position<1)||(Position>ListLenght())){
         return NULL;
@@ -150,5 +149,8 @@ void listClass::ListRetrieve(int Position, listItemType& DataItem, bool& Success
         DataItem = Cur ->Item;
     }
 }
+
+
+
 
 
